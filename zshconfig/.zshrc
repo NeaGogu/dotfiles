@@ -19,8 +19,8 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export JAVA_HOME=~/.jdks/corretto-17.0.7
-export ANDROID_HOME=/home/gogu/Android/Sdk
-export ANDROID_SDK_ROOT=/home/gogu/Android/Sdk
+export ANDROID_HOME=~/Android/Sdk
+export ANDROID_SDK_ROOT=~/Android/Sdk
 export GOPATH=~/go
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -132,7 +132,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 PATH=$PATH:/usr/local/go/bin:~/Programs:$ANDROID_HOME/platform-tools:/usr/bin/android-platform-tools
-PATH=$PATH:$GOPATH/bin:/home/gogu-pop/.local/share/JetBrains/Toolbox/scripts
+PATH=$PATH:$GOPATH/bin:~/.local/share/JetBrains/Toolbox/scripts
 export SSH_AUTH_SOCK=~/.1password/agent.sock
 
 UNI() {
@@ -148,11 +148,11 @@ function studio() {
 }
 
 function idea() {
-	/home/gogu-pop/.local/share/JetBrains/Toolbox/scripts/idea "$1" > /dev/null 2>&1 &
+	$HOME/.local/share/JetBrains/Toolbox/scripts/idea "$1" > /dev/null 2>&1 &
 }
 
 function ws() {
-	/home/gogu-pop/.local/share/JetBrains/Toolbox/scripts/webstorm "$1" > /dev/null 2>&1 &
+	$HOME/.local/share/JetBrains/Toolbox/scripts/webstorm "$1" > /dev/null 2>&1 &
 }
 
 # `znap source` automatically downloads and starts your plugins.
@@ -195,7 +195,7 @@ export NVM_DIR="$HOME/.config/nvm"
 cowsay "yo"
 
 # pnpm
-export PNPM_HOME="/home/gogu-pop/.local/share/pnpm"
+export PNPM_HOME="~/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
