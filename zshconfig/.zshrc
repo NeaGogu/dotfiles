@@ -131,7 +131,7 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-PATH=$PATH:/usr/local/go/bin:~/Programs:$ANDROID_HOME/platform-tools:/usr/bin/android-platform-tools
+PATH=$PATH:/usr/local/go/bin:~/Programs:$ANDROID_HOME/platform-tools:/usr/bin/android-platform-tools:/usr/local/bin/android-platform-tools
 PATH=$PATH:$GOPATH/bin:~/.local/share/JetBrains/Toolbox/scripts
 export SSH_AUTH_SOCK=~/.1password/agent.sock
 

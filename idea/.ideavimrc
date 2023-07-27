@@ -56,3 +56,4 @@ nmap gr :action ShowUsages<CR>
 nmap <leader>L :action NextTab<CR>
 nmap <leader>H :action PreviousTab<CR>
 nmap <leader>E :action ActivateProjectToolWindow<CR>
+nmap <leader>/ :action Find<CR>
