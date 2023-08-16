@@ -66,5 +66,21 @@
     "key": "ctrl+b",
     "command": "-extension.vim_ctrl+b",
     "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
-  }
+  },
+  {
+    "key": "ctrl+cmd+enter",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "search.action.focusSearchList",
+    "when": "searchViewletFocus"
+},
+{
+  "key": "cmd+b",
+  "command": "workbench.explorer.fileView.focus",
+  "when": "editorTextFocus"
+},
+
 ]

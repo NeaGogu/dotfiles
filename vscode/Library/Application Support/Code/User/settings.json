@@ -5,8 +5,8 @@
   "vim.normalModeKeyBindingsNonRecursive": [
     // NAVIGATION
     // switch b/w buffers
-    { "before": ["<S-h>"], "commands": [":bprevious"] },
-    { "before": ["<S-l>"], "commands": [":bnext"] },
+    { "before": ["leader", "<S-h>"], "commands": [":bprevious"] },
+    { "before": ["leader", "<S-l>"], "commands": [":bnext"] },
 
     // splits
     { "before": ["leader", "v"], "commands": [":vsplit"] },
@@ -35,10 +35,10 @@
       "before": ["leader", "e"],
       "commands": ["workbench.explorer.fileView.focus"]
     },
-    {
-      "before": ["ctrl", "b"],
-      "commands": ["workbench.action.toggleSidebarVisibility"]
-    },
+    // {
+    //   "before": ["ctrl", "b"],
+    //   "commands": ["workbench.action.toggleSidebarVisibility"]
+    // },
 
     // NICE TO HAVE
     { "before": ["leader", "w"], "commands": ["workbench.action.files.save"] },
@@ -50,7 +50,19 @@
     {
       "before": ["g", "h"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
-    }
+    },
+    {
+      "before": ["leader", "/"],
+      "commands": ["actions.find"]
+    },
+    {
+      "before": ["leader", "s", "g"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["leader", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
   ],
   "vim.visualModeKeyBindings": [
     // Stay in visual mode while indenting
@@ -75,7 +87,7 @@
   "workbench.statusBar.visible": true,
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
-  "workbench.activityBar.visible": false,
+  "workbench.activityBar.visible": true,
   "editor.fontSize": 20,
   "editor.fontFamily": "'CaskaydiaCove Nerd Font'",
   "go.inlayHints.parameterNames": true,
@@ -83,5 +95,13 @@
   "gopls": {
     "ui.semanticTokens": true
   },
-
+  "projectManager.git.baseFolders": ["~/Projects", "~/dotfiles"],
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "editor.semanticHighlighting.enabled": true,
+  "search.exclude": {
+    "**/.idea": true
+  },
+  "editor.codeLensFontFamily": "'CaskaydiaCove Nerd Font'",
+  "editor.inlayHints.fontFamily": "'CaskaydiaCove Nerd Font'",
+  "scm.inputFontFamily": "'CaskaydiaCove Nerd Font'"
 }

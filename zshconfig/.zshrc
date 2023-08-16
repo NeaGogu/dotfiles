@@ -170,6 +170,7 @@ alias ga='git add'
 alias gma='git commit -am'
 alias gitlg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'"
 alias grecent='f() { git reflog | grep checkout | cut -d " " -f 8 | uniq | head ${1} | cat -n };f'
+alias lg='lazygit'
 
 # Other
 alias zrc='vim ~/.zshrc'
@@ -195,9 +196,15 @@ export NVM_DIR="$HOME/.config/nvm"
 cowsay "yo"
 
 # pnpm
-export PNPM_HOME="~/.local/share/pnpm"
+export PNPM_HOME=~/.local/share/pnpm
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/gogu/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gogu/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/gogu/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gogu/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
