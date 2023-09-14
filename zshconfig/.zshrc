@@ -133,6 +133,7 @@ source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:/usr/local/go/bin:~/Programs:$ANDROID_HOME/platform-tools:/usr/bin/android-platform-tools:/usr/local/bin/android-platform-tools
 PATH=$PATH:$GOPATH/bin:~/.local/share/JetBrains/Toolbox/scripts
+PATH=$PATH:/Applications/CMake.app/Contents/bin
 export SSH_AUTH_SOCK=~/.1password/agent.sock
 
 UNI() {
@@ -147,9 +148,9 @@ function studio() {
    /home/gogu-pop/.local/share/JetBrains/Toolbox/scripts/studio "$1" > /dev/null 2>&1 &
 }
 
-function idea() {
-	$HOME/.local/share/JetBrains/Toolbox/scripts/idea "$1" > /dev/null 2>&1 &
-}
+# function idea() {
+# 	$HOME/.local/share/JetBrains/Toolbox/scripts/idea "$1" > /dev/null 2>&1 &
+# }
 
 function ws() {
 	$HOME/.local/share/JetBrains/Toolbox/scripts/webstorm "$1" > /dev/null 2>&1 &

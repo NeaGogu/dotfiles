@@ -1,11 +1,6 @@
 // Place your key bindings in this file to override the defaults
 [
   {
-    "key": "\\",
-    "command": "extension.vim_tab",
-    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
     "key": "tab",
     "command": "-extension.vim_tab",
     "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
@@ -82,5 +77,36 @@
   "command": "workbench.explorer.fileView.focus",
   "when": "editorTextFocus"
 },
-
+{
+  "command": "vscode-neovim.send",
+  // the key sequence to activate the binding
+  "key": "ctrl+u", 
+  // don't activate during insert mode
+  "when": "editorTextFocus && neovim.mode == normal",
+  // the input to send to Neovim
+  "args": "<C-u>"
+},
+{
+  "command": "vscode-neovim.send",
+  // the key sequence to activate the binding
+  "key": "ctrl+d",
+  // don't activate during insert mode
+  "when": "editorTextFocus",
+  // the input to send to Neovim
+  "args": "<C-d>"
+},
+// {
+//   "command": "vscode-neovim.send",
+//   // the key sequence to activate the binding
+//   "key": "space+space",
+//   // don't activate during insert mode
+//   "when": "editorTextFocus && neovim.mode == normal",
+//   // the input to send to Neovim
+//   "args": "<leader><leader>"
+// },
+// {
+//   "key": "space",
+//   "command": "whichkey.show",
+//   "when": "editorTextFocus && neovim.mode == normal"
+// },
 ]

@@ -44,6 +44,9 @@ yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^Spotify$" manage=off 
 yabai -m rule --add app="^Weather$" manage=off 
 yabai -m rule --add app="^Notes$" manage=off 
+yabai -m rule --add app="^Telegram$" manage=off 
+yabai -m rule --add app="^Discord$" manage=off 
+yabai -m rule --add app="^Calendar$" manage=off 
 
 
 # stuff for space indicator

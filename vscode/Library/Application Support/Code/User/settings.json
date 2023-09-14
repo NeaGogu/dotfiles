@@ -62,7 +62,7 @@
     {
       "before": ["leader", "c", "a"],
       "commands": ["editor.action.quickFix"]
-    },
+    }
   ],
   "vim.visualModeKeyBindings": [
     // Stay in visual mode while indenting
@@ -103,5 +103,23 @@
   },
   "editor.codeLensFontFamily": "'CaskaydiaCove Nerd Font'",
   "editor.inlayHints.fontFamily": "'CaskaydiaCove Nerd Font'",
-  "scm.inputFontFamily": "'CaskaydiaCove Nerd Font'"
+  "scm.inputFontFamily": "'CaskaydiaCove Nerd Font'",
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  "whichkey.delay": 500,
+  "vscode-neovim.logLevel": "debug",
+  "vscode-neovim.neovimInitVimPaths.darwin": "/Users/gogu/.config/nvim/init.lua",
+  "whichkey.bindingOverrides": [
+    {
+			"key": " ",
+			"name": "Project files",
+			"type": "command",
+			"command": "workbench.action.quickOpen"
+		},
+		{
+			"key": "?",
+			"name": "Search keybindings",
+			"type": "command",
+			"command": "whichkey.searchBindings"
+		},
+  ]
 }

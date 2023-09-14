@@ -60,9 +60,9 @@ nmap <leader>E :action ActivateProjectToolWindow<CR>
 nmap <leader>/ :action Find<CR>
 nmap <leader>ca :action ShowIntentionActions<CR>
 nmap <leader>co :action SmartTypeCompletion<CR>
-nmap <leader>h1 :action SetHarpoon1<CR>
-nmap <leader>h2 :action SetHarpoon2<CR>
-nmap <leader>h3 :action SetHarpoon3<CR>
-nmap <leader>u :action GotoHarpoon1<CR>
-nmap <leader>i :action GotoHarpoon2<CR>
-nmap <leader>o :action GotoHarpoon3<CR>
+nmap <leader>sh1 :action SetHarpoon1<CR>
+nmap <leader>sh2 :action SetHarpoon2<CR>
+nmap <leader>sh3 :action SetHarpoon3<CR>
+nmap <leader>h1 :action GotoHarpoon1<CR>
+nmap <leader>h2 :action GotoHarpoon2<CR>
+nmap <leader>h3 :action GotoHarpoon3<CR>
