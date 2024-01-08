@@ -27,7 +27,7 @@
   },
   // FILE TREE
   {
-    "key": "ctrl+n",
+    "key": "cmd+n",
     "command": "explorer.newFile",
     "when": "explorerViewletFocus"
   },
@@ -94,6 +94,29 @@
   "when": "editorTextFocus",
   // the input to send to Neovim
   "args": "<C-d>"
+},
+{
+  "key": "cmd+n",
+  "command": "-workbench.action.files.newUntitledFile"
+},
+{
+  "key": "cmd+n",
+  "command": "explorer.newFile",
+  "when": "explorerViewletFocus"
+},
+{
+  "key": "shift+cmd+n",
+  "command": "-workbench.action.newWindow"
+},
+{
+  "key": "shift+cmd+n",
+  "command": "explorer.newFolder",
+  "when": "explorerViewletFocus"
+},
+{
+  "key": "shift+cmd+n",
+  "command": "explorer.newFolder",
+  "when": "explorerViewletFocus"
 },
 // {
 //   "command": "vscode-neovim.send",

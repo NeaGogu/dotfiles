@@ -47,6 +47,8 @@ yabai -m rule --add app="^Notes$" manage=off
 yabai -m rule --add app="^Telegram$" manage=off 
 yabai -m rule --add app="^Discord$" manage=off 
 yabai -m rule --add app="^Calendar$" manage=off 
+yabai -m rule --add app="^Warp$" manage=off 
+yabai -m rule --add app="WhatsApp" manage=off 
 
 
 # stuff for space indicator

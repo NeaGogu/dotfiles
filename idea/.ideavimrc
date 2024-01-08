@@ -66,3 +66,5 @@ nmap <leader>sh3 :action SetHarpoon3<CR>
 nmap <leader>h1 :action GotoHarpoon1<CR>
 nmap <leader>h2 :action GotoHarpoon2<CR>
 nmap <leader>h3 :action GotoHarpoon3<CR>
+nmap <leader>fm :action Javascript.Linters.EsLint.Fix<CR>
+nmap <leader>fr :action RecentFiles<CR>

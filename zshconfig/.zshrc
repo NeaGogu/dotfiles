@@ -26,7 +26,7 @@ export GOPATH=~/go
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 #ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -133,7 +133,7 @@ source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:/usr/local/go/bin:~/Programs:$ANDROID_HOME/platform-tools:/usr/bin/android-platform-tools:/usr/local/bin/android-platform-tools
 PATH=$PATH:$GOPATH/bin:~/.local/share/JetBrains/Toolbox/scripts
-PATH=$PATH:/Applications/CMake.app/Contents/bin
+PATH=$PATH:/Applications/CMake.app/Contents/bin:/Users/gogu/.yarn/bin
 export SSH_AUTH_SOCK=~/.1password/agent.sock
 
 UNI() {
@@ -205,7 +205,8 @@ esac
 # pnpm end
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/gogu/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gogu/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/gogu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gogu/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/gogu/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gogu/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/gogu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gogu/google-cloud-sdk/completion.zsh.inc'; fi
+source /opt/homebrew/opt/spaceship/spaceship.zsh
