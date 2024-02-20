@@ -152,9 +152,10 @@ function studio() {
 # 	$HOME/.local/share/JetBrains/Toolbox/scripts/idea "$1" > /dev/null 2>&1 &
 # }
 
-function ws() {
-	$HOME/.local/share/JetBrains/Toolbox/scripts/webstorm "$1" > /dev/null 2>&1 &
-}
+# function ws() {
+# 	$HOME/.local/share/JetBrains/Toolbox/scripts/webstorm "$1" > /dev/null 2>&1 &
+# }
+alias ws='webstorm'
 
 # `znap source` automatically downloads and starts your plugins.
 #znap source marlonrichert/zsh-autocomplete
@@ -181,9 +182,56 @@ alias uni='xdg-open "obsidian://open?vault=Notes" > /dev/null 2>&1 &'
 alias work='xdg-open "obsidian://open?vault=Second-Brain" > /dev/null 2>&1 &' 
 
 # fzf stuff
-alias fp='cd $(find ~/Projects -type d ! -regex ".*/\.git.*" ! -regex ".*/\.gradle.*" ! -regex ".*/\.m2.*" ! -regex ".*/\.local.*" ! -regex ".*/\.config.*" ! -regex ".*/\..*" | fzf)'
-alias fa='cd $(find ~/Almer -maxdepth 2 -type d  ! -regex ".*/\.git.*" ! -regex ".*/\.gradle.*" ! -regex ".*/\.m2.*" ! -regex ".*/\.local.*" ! -regex ".*/\.config.*" | fzf)'
-alias ff='cd $(find . -type d ! -name "^.gradle/" ! -regex ".*/\.git.*" ! -regex ".*/\.gradle.*" ! -regex ".*/\.m2.*" ! -regex ".*/\.local.*" ! -regex ".*/\.config.*" | fzf)'
+#
+
+function search_and_cd() {
+    local search_root="$1"
+    local depth="$2"
+    shift 2  # Shift off the first two arguments
+
+    local ignore_patterns=("$@")  # Capture the rest as ignore patterns
+    local find_command="find $search_root -maxdepth $depth -type d"
+
+    # Loop over ignore patterns and append them to the find command
+    for pattern in "${ignore_patterns[@]}"; do
+        find_command+=" ! -regex '$pattern'"
+    done
+
+
+    # Use fzf to select from the find results and change directory
+    # cd "$($find_command | fzf)" || return
+
+    # Use eval to ensure the shell evaluates the find_command string as a command
+    # and pipe the output to fzf
+    cd $search_root
+    # cd $(eval "$find_command" | fzf) || return
+    #
+    local selected_directory=$(eval "$find_command" | fzf)
+
+    # Only execute cd if selected_directory is not empty
+    if [[ -n $selected_directory ]]; then
+        cd "$selected_directory" || return
+    fi
+}
+
+# Define a list of patterns to ignore
+ignore_patterns_list=(
+    ".*/\.git.*"
+    ".*/\.gradle.*"
+    ".*/\.m2.*"
+    ".*/\.local.*"
+    ".*/\.config.*"
+    ".*/\..*"
+)
+
+alias fp='search_and_cd ~/Projects 2 "${ignore_patterns_list[@]}"'
+alias fa='search_and_cd ~/Almer 2 "${ignore_patterns_list[@]}"'
+alias ff='search_and_cd . 2 "${ignore_patterns_list[@]}"'
+
+# alias fp='cd $(find ~/Projects -type d ! -regex ".*/\.git.*" ! -regex ".*/\.gradle.*" ! -regex ".*/\.m2.*" ! -regex ".*/\.local.*" ! -regex ".*/\.config.*" ! -regex ".*/\..*" | fzf)'
+# alias fa='cd $(find ~/Almer -maxdepth 2 -type d  ! -regex ".*/\.git.*" ! -regex ".*/\.gradle.*" ! -regex ".*/\.m2.*" ! -regex ".*/\.local.*" ! -regex ".*/\.config.*" | fzf)'
+# alias ff='cd $(find . -type d ! -name "^.gradle/" ! -regex ".*/\.git.*" ! -regex ".*/\.gradle.*" ! -regex ".*/\.m2.*" ! -regex ".*/\.local.*" ! -regex ".*/\.config.*" | fzf)'
+alias fman='compgen -c | fzf | xargs man'
 
 alias ocr='flameshot gui --raw | tesseract stdin stdout | xclip -selection clipboard'
 

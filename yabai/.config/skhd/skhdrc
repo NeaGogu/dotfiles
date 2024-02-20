@@ -34,7 +34,8 @@ shift + alt - 0 : yabai -m space --balance
 # -- Modifying Window Size --
 
 # maximize a window
-shift + alt - m : yabai -m window --toggle zoom-fullscreen
+# shift + alt - m : yabai -m window --toggle zoom-fullscreen
+shift + alt - m : yabai -m window --grid 1:1:0:0:1:1
 
 # balance out tree of windows (resize to occupy same area)
 shift + alt - 0 : yabai -m space --balance

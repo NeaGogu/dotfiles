@@ -1,5 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
+	enabled = true,
 	keys = {
 		{
 			"<leader>/",
@@ -11,6 +12,13 @@ return {
 				}))
 			end,
 			desc = "Search in current buffer",
+		},
+	},
+	opts = {
+		defaults = {
+			file_ignore_patterns = {
+				"node_modules",
+			},
 		},
 	},
 }
