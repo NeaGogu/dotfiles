@@ -244,6 +244,13 @@ export NVM_DIR="$HOME/.config/nvm"
 
 cowsay "yo"
 
+export EDITOR=nvim
+
+# configure git global gitignore file
+git config --global core.excludesfile ~/.config/global_gitignore
+
+#### random shit added automatically
+
 # pnpm
 export PNPM_HOME=~/.local/share/pnpm
 case ":$PATH:" in
@@ -258,3 +265,19 @@ if [ -f '/Users/gogu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gogu/googl
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/gogu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gogu/google-cloud-sdk/completion.zsh.inc'; fi
 source /opt/homebrew/opt/spaceship/spaceship.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

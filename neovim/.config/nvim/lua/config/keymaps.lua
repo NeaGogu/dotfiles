@@ -6,21 +6,19 @@
 local options = { noremap = true, silent = true }
 
 local whichkey = {
-  show = function()
-    vim.fn.VSCodeNotify("whichkey.show")
-  end
+	show = function()
+		vim.fn.VSCodeNotify("whichkey.show")
+	end,
 }
 
 local search = {
-  references = function()
-    vim.fn.VSCodeNotify("editor.action.goToReferences")
-  end,
-  inFile = function()
-    vim.fm.VSCodeNotify("actions.find")
-  end
-
+	references = function()
+		vim.fn.VSCodeNotify("editor.action.goToReferences")
+	end,
+	inFile = function()
+		vim.fm.VSCodeNotify("actions.find")
+	end,
 }
-
 
 vim.keymap.set("n", "<C-u>", "12kzz")
 vim.keymap.set("n", "<C-d>", "12jzz")
@@ -29,27 +27,38 @@ vim.keymap.set("n", "<C-d>", "12jzz")
 vim.keymap.set("v", "p", '"_dP"', options)
 
 if vim.g.vscode then
-  local vscode = require("vscode-neovim")
-  print("vscode in keymap brrraaaapp")
-  vim.notify = vscode.notify
+	local vscode = require("vscode-neovim")
+	print("vscode in keymap brrraaaapp")
+	vim.notify = vscode.notify
 
-    -- print(vim.g.vscode)
-    -- vim.keymap.set("n", "<leader>wh", require("vscode-neovim").notify, {"whichkey.show"})
-  -- vim.keymap.set({ 'n', 'v' }, "<leader>", whichkey.show)
-  vim.keymap.set('n', "gr", search.references)
-  vim.keymap.set('n', "<leader>/", search.inFile)
-  
-    vim.keymap.set('n', "==", function() vscode.call('editor.action.formatSelection') end, options)
-    vim.keymap.set('v', "==", function() vscode.call('editor.action.formatSelection') end, optirns)
-  
-  vim.keymap.set('n', "<leader>rr", function() vscode.action("editor.action.rename") end, options) 
-  
-  vim.keymap.set('n', '<leader>ca', 
-  function()
-    vim.fn.VSCodeNotify("editor.action.quickFix")
-  end)
+	-- print(vim.g.vscode)
+	-- vim.keymap.set("n", "<leader>wh", require("vscode-neovim").notify, {"whichkey.show"})
+	-- vim.keymap.set({ 'n', 'v' }, "<leader>", whichkey.show)
+	vim.keymap.set("n", "gr", search.references)
+	vim.keymap.set("n", "<leader>/", search.inFile)
 
+	vim.keymap.set("n", "==", function()
+		vscode.call("editor.action.formatSelection")
+	end, options)
+	vim.keymap.set("v", "==", function()
+		vscode.call("editor.action.formatSelection")
+	end, options)
+
+	vim.keymap.set("n", "<leader>rr", function()
+		vscode.action("editor.action.rename")
+	end, options)
+
+	vim.keymap.set("n", "<leader>ca", function()
+		vim.fn.VSCodeNotify("editor.action.quickFix")
+	end)
 end
+
+vim.keymap.set("n", "<leader>]", "<cmd>m .+1<cr>==", { desc = "Move down" })
+vim.keymap.set("n", "<leader>[", "<cmd>m .-2<cr>==", { desc = "Move up" })
+
+vim.keymap.set("v", "<leader>]", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+vim.keymap.set("v", "<leader>[", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename, { desc = "Rename" })
 
 -- vim.keymap.set("n", "<leader><leader>", VSCodeNotify("workbench.action.quickOpen"))
 
