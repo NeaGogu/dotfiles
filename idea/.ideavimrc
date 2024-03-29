@@ -68,3 +68,8 @@ nmap <leader>h2 :action GotoHarpoon2<CR>
 nmap <leader>h3 :action GotoHarpoon3<CR>
 nmap <leader>fm :action Javascript.Linters.EsLint.Fix<CR>
 nmap <leader>fr :action RecentFiles<CR>
+
+
+set which-key
+set notimeout
+Plug 'machakann/vim-highlightedyank'

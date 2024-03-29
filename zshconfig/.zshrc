@@ -245,6 +245,7 @@ export NVM_DIR="$HOME/.config/nvm"
 cowsay "yo"
 
 export EDITOR=nvim
+export NVIM_CONF="$HOME/.config/nvim/"
 
 # configure git global gitignore file
 git config --global core.excludesfile ~/.config/global_gitignore
