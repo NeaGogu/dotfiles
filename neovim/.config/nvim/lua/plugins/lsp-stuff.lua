@@ -1,5 +1,19 @@
 -- write hello world
 -- write a function
+function Dump(o)
+	if type(o) == "table" then
+		local s = "{ "
+		for k, v in pairs(o) do
+			if type(k) ~= "number" then
+				k = '"' .. k .. '"'
+			end
+			s = s .. "[" .. k .. "] = " .. Dump(v) .. ","
+		end
+		return s .. "} "
+	else
+		return tostring(o)
+	end
+end
 
 return {
 
@@ -15,8 +29,6 @@ return {
 
 			local luasnip = require("luasnip")
 			local cmp = require("cmp")
-
-			print(opts)
 
 			opts.mapping = cmp.mapping.preset.insert({
 				-- Select the [n]ext item

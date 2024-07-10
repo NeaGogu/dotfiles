@@ -17,7 +17,7 @@
     "when": "terminalFocus"
   },
   {
-    "key": "shift+j",
+    "key": "shift+`",
     "command": "workbench.action.togglePanel"
   },
   {
@@ -87,15 +87,6 @@
   "args": "<C-u>"
 },
 {
-  "command": "vscode-neovim.send",
-  // the key sequence to activate the binding
-  "key": "ctrl+d",
-  // don't activate during insert mode
-  "when": "editorTextFocus",
-  // the input to send to Neovim
-  "args": "<C-d>"
-},
-{
   "key": "cmd+n",
   "command": "-workbench.action.files.newUntitledFile"
 },
@@ -118,18 +109,53 @@
   "command": "explorer.newFolder",
   "when": "explorerViewletFocus"
 },
-// {
-//   "command": "vscode-neovim.send",
-//   // the key sequence to activate the binding
-//   "key": "space+space",
-//   // don't activate during insert mode
-//   "when": "editorTextFocus && neovim.mode == normal",
-//   // the input to send to Neovim
-//   "args": "<leader><leader>"
-// },
-// {
-//   "key": "space",
-//   "command": "whichkey.show",
-//   "when": "editorTextFocus && neovim.mode == normal"
-// },
+{
+  "key": "cmd+1",
+  "command": "workbench.action.toggleSidebarVisibility"
+},
+{
+  "key": "cmd+b",
+  "command": "-workbench.action.toggleSidebarVisibility"
+},
+{
+  "key": "cmd+k right",
+  "command": "-workbench.action.moveActiveEditorGroupRight"
+},
+{
+  "key": "shift+cmd+l",
+  "command": "-editor.action.selectHighlights",
+  "when": "editorFocus"
+},
+{
+  "key": "shift+cmd+l",
+  "command": "-selectAllSearchEditorMatches",
+  "when": "inSearchEditor"
+},
+{
+  "key": "shift+cmd+l",
+  "command": "-addCursorsAtSearchResults",
+  "when": "fileMatchOrMatchFocus && searchViewletVisible"
+},
+{
+  "key": "shift+cmd+h",
+  "command": "-workbench.action.replaceInFiles"
+},
+{
+  "key": "shift+cmd+j",
+  "command": "-workbench.action.search.toggleQueryDetails",
+  "when": "inSearchEditor || searchViewletFocus"
+},
+{
+  "key": "shift+cmd+k",
+  "command": "-editor.action.deleteLines",
+  "when": "textInputFocus && !editorReadonly"
+},
+{
+  "key": "shift+cmd+h",
+  "command": "workbench.action.focusLeftGroup"
+},
+{
+  "key": "ctrl+alt+cmd+n",
+  "command": "-welcome.showNewFileEntries"
+}
 ]

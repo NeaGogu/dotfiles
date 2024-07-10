@@ -60,7 +60,11 @@ vim.keymap.set("v", "<leader>]", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 vim.keymap.set("v", "<leader>[", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 vim.keymap.set("n", "<leader>rr", vim.lsp.buf.rename, { desc = "Rename" })
 
--- vim.keymap.set("n", "<leader><leader>", VSCodeNotify("workbench.action.quickOpen"))
+-- These mappings control the size of splits (height/width)
+vim.keymap.set("n", "<leader>w,", "<c-w>10<", { desc = "Decrease split width" })
+vim.keymap.set("n", "<leader>w.", "<c-w>10>", { desc = "Increse split width" })
+vim.keymap.set("n", "<c-t>", "<C-W>+", { desc = "Increase split height" })
+vim.keymap.set("n", "<c-s>", "<C-W>-", { desc = "Increase split width " })
 
 -- -- options-
 -- vim.keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "[S]earch by [G]rep" })

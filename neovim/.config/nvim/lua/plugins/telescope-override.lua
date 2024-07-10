@@ -19,6 +19,8 @@ return {
 			file_ignore_patterns = {
 				"node_modules",
 				".idea",
+				".misc",
+				".DS_Store",
 			},
 		},
 		pickers = {

@@ -178,10 +178,12 @@ alias lg='lazygit'
 alias zrc='vim ~/.zshrc'
 alias saverc='source ~/.zshrc'
 alias geof='cd ~/UNI-NOTES/Projects/Operating_systems/2INC0'
-alias uni='xdg-open "obsidian://open?vault=Notes" > /dev/null 2>&1 &' 
-alias work='xdg-open "obsidian://open?vault=Second-Brain" > /dev/null 2>&1 &' 
+alias uni='xdg-open "obsidian://open?vault=Notes" > /dev/null 2>&1 &'
+alias work='xdg-open "obsidian://open?vault=Second-Brain" > /dev/null 2>&1 &'
 
 # fzf stuff
+# setup fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 #
 
 function search_and_cd() {
@@ -244,21 +246,16 @@ export NVM_DIR="$HOME/.config/nvm"
 
 cowsay "yo"
 
+export VISUAL=nvim
 export EDITOR=nvim
-export NVIM_CONF="$HOME/.config/nvim/"
+export NVIM_CONF="$HOME/.config/nvim/init.lua"
+export NVIM_CONF_DIR="$HOME/.config/nvim"
+export ZSH_CONF="$HOME/.zshrc"
 
 # configure git global gitignore file
 git config --global core.excludesfile ~/.config/global_gitignore
 
 #### random shit added automatically
-
-# pnpm
-export PNPM_HOME=~/.local/share/pnpm
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/gogu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gogu/google-cloud-sdk/path.zsh.inc'; fi
@@ -282,3 +279,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+alias gyat=git
+alias nvim=$HOME/nvim-macos-arm64/bin/nvim

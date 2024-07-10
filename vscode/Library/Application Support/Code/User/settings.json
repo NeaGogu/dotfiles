@@ -11,7 +11,6 @@
     // splits
     { "before": ["leader", "v"], "commands": [":vsplit"] },
     { "before": ["leader", "s"], "commands": [":split"] },
-
     // panes
     {
       "before": ["leader", "h"],
@@ -48,7 +47,7 @@
     },
     { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
     {
-      "before": ["g", "h"],
+      "before": ["K"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
     },
     {
@@ -62,7 +61,28 @@
     {
       "before": ["leader", "c", "a"],
       "commands": ["editor.action.quickFix"]
+    },
+    {
+        // focust left group with shift + h
+        "before": ["H"],
+        "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+        // focust right group with shift + l
+        "before": ["L"],
+        "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+        // focust above group with shift + k
+        "before": ["K"],
+        "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+        // focust below group with shift + j
+        "before": ["J"],
+        "commands": ["workbench.action.focusBelowGroup"]
     }
+
   ],
   "vim.visualModeKeyBindings": [
     // Stay in visual mode while indenting
@@ -72,7 +92,7 @@
     { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
     { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
     // toggle comment selection
-    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+    { "before": ["g", "c"], "commands": ["editor.action.commentLine"] }
   ],
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -136,5 +156,19 @@
     "asvetliakov.vscode-neovim": 1
   },
   "workbench.editor.showTabs": "single",
-  "workbench.activityBar.location": "hidden"
+  "debug.console.fontSize": 18,
+  "terminal.integrated.fontSize": 18,
+  "editor.inlineSuggest.fontFamily": "default ",
+  "workbench.sideBar.location": "right",
+  // "workbench.activityBar.location": "hidden"
+  "contributes": {
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "welcome.showNewFileEntries",
+          "when": false
+        }
+      ]
+    }
+  }
 }
