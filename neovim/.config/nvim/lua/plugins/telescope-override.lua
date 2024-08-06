@@ -13,6 +13,13 @@ return {
 			end,
 			desc = "Search in current buffer",
 		},
+		{
+			"<leader>ff",
+			function()
+				require("telescope.builtin").find_files({ hidden = true, no_ignore = true })
+			end,
+			desc = "Search files (also hidden)",
+		},
 	},
 	opts = {
 		defaults = {
@@ -21,6 +28,7 @@ return {
 				".idea",
 				".misc",
 				".DS_Store",
+				".git",
 			},
 		},
 		pickers = {

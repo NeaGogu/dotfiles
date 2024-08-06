@@ -133,7 +133,7 @@ source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:/usr/local/go/bin:~/Programs:$ANDROID_HOME/platform-tools:/usr/bin/android-platform-tools:/usr/local/bin/android-platform-tools
 PATH=$PATH:$GOPATH/bin:~/.local/share/JetBrains/Toolbox/scripts
-PATH=$PATH:/Applications/CMake.app/Contents/bin:/Users/gogu/.yarn/bin
+PATH=$PATH:/Applications/CMake.app/Contents/bin:/Users/gogu/.yarn/bin:$HOME/scripts
 export SSH_AUTH_SOCK=~/.1password/agent.sock
 
 UNI() {
@@ -281,3 +281,8 @@ unset __conda_setup
 
 alias gyat=git
 alias nvim=$HOME/nvim-macos-arm64/bin/nvim
+
+# zellij stuff
+#
+
+export FD_IGNORE_FILE=~/.fdignore

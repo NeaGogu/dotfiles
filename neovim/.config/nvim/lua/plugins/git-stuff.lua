@@ -1,4 +1,5 @@
 return {
+	-- lalala
 	{
 
 		"NeogitOrg/neogit",
@@ -8,7 +9,7 @@ return {
 
 			-- Only one of these is needed, not both.
 			"nvim-telescope/telescope.nvim", -- optional
-			"ibhagwan/fzf-lua", -- optional
+			-- "ibhagwan/fzf-lua", -- optional
 		},
 		config = true,
 		keys = function()
@@ -18,7 +19,7 @@ return {
 				{
 					"<leader>gn",
 					function()
-						neogit.open()
+						neogit.open({ kind = "auto" })
 					end,
 					desc = "Open neogit",
 				},
@@ -26,5 +27,8 @@ return {
 
 			return keys
 		end,
+	},
+	{
+		"tpope/vim-fugitive",
 	},
 }
