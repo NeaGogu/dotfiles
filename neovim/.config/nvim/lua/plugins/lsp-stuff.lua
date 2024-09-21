@@ -30,6 +30,14 @@ return {
 			local luasnip = require("luasnip")
 			local cmp = require("cmp")
 
+			local cmp_window = require("cmp.config.window")
+			opts.window = {
+				completion = {
+					border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+				},
+				documentation = cmp_window.bordered(),
+			}
+
 			opts.mapping = cmp.mapping.preset.insert({
 				-- Select the [n]ext item
 				["<C-n>"] = cmp.mapping.select_next_item(),
@@ -74,5 +82,13 @@ return {
 				--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
 			})
 		end,
+	},
+	{
+		"folke/noice.nvim",
+		opts = {
+			presets = {
+				lsp_doc_border = true,
+			},
+		},
 	},
 }

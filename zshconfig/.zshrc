@@ -246,8 +246,8 @@ export NVM_DIR="$HOME/.config/nvm"
 
 cowsay "yo"
 
-export VISUAL=nvim
-export EDITOR=nvim
+export VISUAL=$HOME/nvim-macos-arm64/bin/nvim
+export EDITOR=$HOME/nvim-macos-arm64/bin/nvim
 export NVIM_CONF="$HOME/.config/nvim/init.lua"
 export NVIM_CONF_DIR="$HOME/.config/nvim"
 export ZSH_CONF="$HOME/.zshrc"

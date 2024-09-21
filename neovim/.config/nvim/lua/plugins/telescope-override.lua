@@ -24,11 +24,11 @@ return {
 	opts = {
 		defaults = {
 			file_ignore_patterns = {
-				"node_modules",
-				".idea",
-				".misc",
-				".DS_Store",
-				".git",
+				-- "node_modules",
+				-- ".idea",
+				-- ".misc",
+				-- ".DS_Store",
+				-- ".git",
 			},
 		},
 		pickers = {
